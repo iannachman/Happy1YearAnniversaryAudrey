@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <!-- Ensure proper mobile scaling -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Image Gallery</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; width: 100%; overflow: hidden; font-family: Arial, Helvetica, sans-serif; position: relative; }
+
+    /* Desktop layout: 6 × 3 grid */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      gap: 2px;
+      height: 100%;
+      width: 100%;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    #helloBox {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(255, 255, 255, 0.85);
+      padding: 2rem 4rem;
+      border-radius: 16px;
+      font-size: 3rem;
+      font-weight: 700;
+      color: #000;
+      z-index: 1050;
+      text-align: center;
+      animation: fadeOut 4s ease 3s forwards;
+    }
+
+    @keyframes fadeOut {
+      to { opacity: 0; visibility: hidden; }
+    }
+
+    /* Mobile-friendly layout: 3 × 6 grid */
+    @media (max-width: 600px) {
+      .gallery {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(6, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="helloBox">Happy Anniversary Audrey!!! I love you!!!</div>
+
+  <!-- 18 placeholder images (replace with your own) -->
+  <div class="gallery" id="gallery">
+    <img src="https://picsum.photos/id/1015/800/800" alt="placeholder" />
+    <img src="https://picsum.photos/id/1025/800/800" alt="placeholder" />
+    <img src="https://picsum.photos/id/1035/800/800" alt="placeholder" />
+    <img src="https://picsum.photos/id/1045/800/800" alt="placeholder" />
+    <img src="https://picsum.photos/id/1055/800/800" alt="placeholder" />
+    <img src="https://picsum.photos/id/1065/800/800" alt="placeholder" />
+
+    <img src="https://picsum.photos/id/1075/800/800" alt="placeholder" />
+    <img src="https://picsum.photos/id/1085/800/800" alt="placeholder" />
+    <img src="https://picsum.photos/id/1095/800/800" alt="placeholder" />
+    <img src="https://picsum.photos/id/1105/800/800" alt="placeholder" />
+    <img src="https://picsum.photos/id/1115/800/800" alt="placeholder" />
+    <img src="https://picsum.photos/id/1125/800/800" alt="placeholder" />
+
+    <img src="https://picsum.photos/id/1135/800/800" alt="placeholder" />
+    <img src="https://picsum.photos/id/1145/800/800" alt="placeholder" />
+    <img src="https://picsum.photos/id/1155/800/800" alt="placeholder" />
+    <img src="https://picsum.photos/id/1165/800/800" alt="placeholder" />
+    <img src="https://picsum.photos/id/1175/800/800" alt="placeholder" />
+    <img src="https://picsum.photos/id/1185/800/800" alt="placeholder" />
+  </div>
+
+  <!-- Confetti library -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script>
+    window.addEventListener('load', () => {
+      confetti({ particleCount: 1600, spread: 80, origin: { y: 0.6 } });
+    });
+  </script>
+</body>
+</html>
